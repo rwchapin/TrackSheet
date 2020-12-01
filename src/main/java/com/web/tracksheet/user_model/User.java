@@ -11,7 +11,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.web.tracksheet.ts_models.TrackSheet;
 
 @Entity
 @Table(name="accounts")
@@ -38,12 +37,9 @@ public class User {
 	
 	private String role;
 	
-	@OneToMany(mappedBy="user_id", cascade=CascadeType.ALL)
-	private List<TrackSheet> tracksheets;
 	
 
-	public User(Long id, String fName, String lName, String email, String password, String password2, String role,
-			List<TrackSheet> tracksheets) {
+	public User(Long id, String fName, String lName, String email, String password, String password2, String role) {
 		super();
 		this.id = id;
 		this.fName = fName;
@@ -52,7 +48,6 @@ public class User {
 		this.password = password;
 		this.password2 = password2;
 		this.role = role;
-		this.tracksheets = tracksheets;
 	}
 
 	public Long getId() {
@@ -112,18 +107,12 @@ public class User {
 		this.role = role;
 	}
 	
-	public List<TrackSheet> getTracksheets() {
-		return tracksheets;
-	}
-
-	public void setTracksheets(List<TrackSheet> tracksheets) {
-		this.tracksheets = tracksheets;
-	}
+	
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", fName=" + fName + ", lName=" + lName + ", email=" + email + ", password="
-				+ password + ", password2=" + password2 + ", role=" + role + ", tracksheets=" + tracksheets + "]";
+				+ password + ", password2=" + password2 + ", role=" + role + "]";
 	}
 	
 	

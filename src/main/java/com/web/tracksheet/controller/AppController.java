@@ -17,13 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.web.tracksheet.ts_models.TrackSheet;
-//import com.web.tracksheet.ts_repository.FohOutputsRepository;
-//import com.web.tracksheet.ts_repository.InputsRepository;
-//import com.web.tracksheet.ts_repository.MonOutputsRepository;
-import com.web.tracksheet.ts_repository.TrackSheetRepository;
-//import com.web.tracksheet.ts_repository.WirelessInputsRepository;
-//import com.web.tracksheet.ts_repository.WirelessOutputsRepository;
+
 import com.web.tracksheet.user_model.User;
 import com.web.tracksheet.user_repository.UserRepository;
 
@@ -34,23 +28,8 @@ public class AppController {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@Autowired
-	private TrackSheetRepository trackSheetRepository;
-//	
-//	@Autowired
-//	private InputsRepository inputsRepository;
-//	
-//	@Autowired
-//	private FohOutputsRepository fohOutputsRepository;
-//	
-//	@Autowired
-//	private MonOutputsRepository monOutputsRepository;
-//	
-//	@Autowired
-//	private WirelessInputsRepository wirelessInputsRepository;
-//	
-//	@Autowired
-//	private WirelessOutputsRepository wirelessOutputsRepository;
+	
+	
 	
 	@GetMapping({"/","home"})
 	String index(Model model){	
@@ -213,9 +192,5 @@ public class AppController {
 	   return new User();		
 	}
 	
-	@ModelAttribute("tracksheet")
-	public TrackSheet trackSheet() {
-		return new TrackSheet();
-	}
 
 }
